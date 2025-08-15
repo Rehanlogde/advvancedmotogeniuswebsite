@@ -1,0 +1,426 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'homepage.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <title>RECOB</title>
+  </head>
+  <style></style>
+  <script>
+    /*
+    window.onload = function () {
+        nottochangeme();
+        scrolleffect();
+    }
+    function nottochangeme() {
+        var vehicle1description = document.getElementById('car1detail');
+        var vehicle2description = document.getElementById('car2detail');
+        var vehicle3description = document.getElementById('car3detail');
+        var vehicle4description = document.getElementById('car4detail');
+
+        var sidetextofveh1 = document.getElementById('textforcardetail1')
+        var sidetextofveh2 = document.getElementById('textforcardetail2')
+        var sidetextofveh3 = document.getElementById('textforcardetail3')
+        var sidetextofveh4 = document.getElementById('textforcardetail4')
+
+        sidetextofveh1.style.transitionDuration = "1s"
+        sidetextofveh2.style.transitionDuration = "1s"
+        sidetextofveh3.style.transitionDuration = "1s"
+        sidetextofveh4.style.transitionDuration = "1s"
+
+        vehicle1description.style.transitionDuration = "1s"
+        vehicle2description.style.transitionDuration = "1s"
+        vehicle3description.style.transitionDuration = "1s"
+        vehicle4description.style.transitionDuration = "1s"
+
+        vehicle1description.addEventListener('mouseover', () => {
+            sidetextofveh1.style.marginTop = "-350px";
+            vehicle2description.style.marginTop = "220px"
+        })
+        vehicle1description.addEventListener('mouseout', () => {
+            sidetextofveh1.style.transitionDuration = "1s"
+            sidetextofveh1.style.marginTop = "-250px";
+            vehicle2description.style.marginTop = "180px";
+        })
+
+        vehicle2description.addEventListener('mouseover', () => {
+            sidetextofveh2.style.transitionDuration = "1s"
+            sidetextofveh2.style.marginTop = "-350px";
+            vehicle3description.style.marginTop = "220px"
+        })
+        vehicle2description.addEventListener('mouseout', () => {
+            sidetextofveh2.style.transitionDuration = "1s"
+            sidetextofveh2.style.marginTop = "-250px";
+            vehicle3description.style.marginTop = "180px"
+        })
+
+        vehicle3description.addEventListener('mouseover', () => {
+            sidetextofveh3.style.transitionDuration = "1s"
+            sidetextofveh3.style.marginTop = "-350px";
+            vehicle4description.style.marginTop = "220px"
+        })
+        vehicle3description.addEventListener('mouseout', () => {
+            sidetextofveh3.style.transitionDuration = "1s"
+            sidetextofveh3.style.marginTop = "-250px";
+            vehicle4description.style.marginTop = "180px"
+        })
+        vehicle4description.addEventListener('mouseover', () => {
+            sidetextofveh3.style.transitionDuration = "1s"
+            sidetextofveh4.style.marginTop = "-350px";
+        })
+        vehicle4description.addEventListener('mouseout', () => {
+            sidetextofveh4.style.transitionDuration = "1s"
+            sidetextofveh4.style.marginTop = "-250px";
+        })
+    }
+*/
+  </script>
+
+  <body>
+    <header>
+      <h1
+        align="center"
+        style="
+          font-size: 70px;
+          font-family: 'Bebas Neue', sans-serif;
+          letter-spacing: 3px;
+        "
+      >
+        RECOB
+      </h1>
+      <div id="headerbuttons">
+        <a href="/registration"><button>Register</button></a>
+        <a href="/login"><button>Login</button></a>
+      </div>
+    </header>
+
+    <div id="videocontainer">
+      <video
+        src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\videos\bmwvid.mp4' %}"
+        autoplay
+        loop
+        muted
+        playsinline
+        id="actualvid"
+      ></video>
+      <div id="someinfo">
+        <h2>We believe combustion over battery</h2>
+        <a href="/learnmore"><button id="someinfobutton">Learn more</button></a>
+      </div>
+    </div>
+
+    <div id="actualbody"></div>
+
+    <h1 align="center" style="font-size: 50px" id="recobworld">RECOB world</h1>
+
+    <div id="car1container">
+      <div id="detailscar1">
+        <h2 align="center" style="font-size: 30px">{{vehicle1name}}</h2>
+        <br />
+        <p style="text-align: left">{{vehicle1description}}</p>
+        <a href="/book/?buttons=M5"><button id="buttonv21">Book now</button></a>
+        <button id="buttonv22">Book a test ride</button>
+      </div>
+      <div id="imageholderforcar1container">
+        <img
+          src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\bmwm5.webp'%}"
+          alt=""
+          id="car1img"
+        />
+      </div>
+    </div>
+    <div id="car2container">
+      <div id="imageholderforcar2container">
+        <img
+          src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\adventure 390.jpeg'%}"
+          alt=""
+          id="car2img"
+        />
+      </div>
+      <div id="detailscar2">
+        <h2 align="center" style="font-size: 30px">{{vehicle2name}}</h2>
+        <br />
+        <p style="text-align: left">{{vehicle2description}}</p>
+        <button id="buttonv21">Book now</button>
+        <button id="buttonv22">Book a test ride</button>
+      </div>
+    </div>
+    <div id="middlecontaineroflittleshowroom">
+      <h1 align="center" style="font-size: 40px">Technologies we use</h1>
+      <div id="actualsubelements">
+        <div id="middlesub">
+          <img
+            src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\bmw m2.jpg'%}"
+            alt=""
+            id="img1ofsubelement"
+          />
+          <div id="subelement1text">Hybrid technology</div>
+        </div>
+        <div id="middlesub">
+          <img
+            src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\paganireal.jpg'%}"
+            alt=""
+            id="img2ofsubelement"
+          />
+          <div id="subelement2text">Sustainable materials</div>
+        </div>
+        <div id="middlesub">
+          <img
+            src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\koenigsegnis.jpg'%}"
+            alt=""
+            id="img3ofsubelement"
+          />
+          <div id="subelement3text">ADAS system</div>
+        </div>
+      </div>
+    </div>
+    <div id="car3container">
+      <div id="detailscar3">
+        <h2 align="center" style="font-size: 30px">{{vehicle3name}}</h2>
+        <br />
+        <p style="text-align: left">{{vehicle3description}}</p>
+        <a href="/book"><button id="buttonv21">Book now</button></a>
+        <button id="buttonv22">Book a test ride</button>
+      </div>
+      <div id="imageholderforcar3container">
+        <img
+          src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\Lamborghini avendator.webp'%}"
+          alt=""
+          id="car3img"
+        />
+      </div>
+    </div>
+
+    <div id="car4container">
+      <div id="imageholderforcar4container">
+        <img
+          src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\zx10r.png'%}"
+          alt=""
+          id="car4img"
+        />
+      </div>
+      <div id="detailscar4">
+        <h2 align="center" style="font-size: 30px">{{vehicle4name}}</h2>
+        <br />
+        <p style="text-align: left">{{vehicle4description}}</p>
+        <button id="buttonv21">Book now</button>
+        <button id="buttonv22">Book a test ride</button>
+      </div>
+    </div>
+    <a href="/showroom"
+      ><button id="showingallcarsbutton">See all cars & bikes</button></a
+    >
+
+    <div id="middlecontainer">
+      <img
+        src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\audi.webp'%}"
+        alt=""
+        id="imginmiddlecontainer"
+      />
+      <div id="textinsidemiddlecontainer">
+        <h2 style="margin-bottom: -10px">A car that is more sustainable</h2>
+        <br /><br />
+        <p>
+          Sustainability in the automotive industry focuses on reducing the
+          environmental impact of vehicles throughout their lifecycle. This
+          involves not only designing fuel-efficient or electric vehicles but
+          also using eco-friendly materials, minimizing emissions during
+          manufacturing, and improving recyclability. Innovations like hybrid
+          engines, regenerative braking, and the shift toward electric mobility
+          are crucial steps in this direction.
+        </p>
+        <a href="/learnmoresustainability"
+          ><button id="middlecontainerbutton">Learn more</button></a
+        >
+      </div>
+    </div>
+
+    <h1 align="center" style="margin-top: 100px; font-size: 50px">
+      Discover more
+    </h1>
+    <div id="discover">
+      <div id="discoverelement1">
+        <img
+          src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\bmwlogo.png' %}"
+          alt=""
+          id="discoverelement1img"
+        />
+        <button id="discoverelement1butt1">View all cars</button>
+        <button id="discoverelement1butt2">View all bikes</button>
+      </div>
+      <div id="discoverelement2">
+        <img
+          src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\ktmlogo1.jpg' %}"
+          alt=""
+          id="discoverelement2img"
+        />
+        <button id="discoverelement1butt1">View all bikes</button>
+        <button id="discoverelement1butt2">View dirt bikes</button>
+      </div>
+      <div id="discoverelement3">
+        <img
+          src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\porschelogo.png' %}"
+          alt=""
+          id="discoverelement3img"
+        />
+        <button id="discoverelement1butt1">View all cars</button>
+        <button id="discoverelement1butt2">View all electric</button>
+      </div>
+    </div>
+    <footer>
+      <div id="headingoffooter">
+        <img
+          src="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\indianflag.svg'%}"
+          alt="image cannot be displayed"
+          id="indianflag"
+        />
+        <h2 align="center" style="font-size: 35px">Indian brand</h2>
+      </div>
+      <div id="footerelements">
+        <div id="services">
+          <h2 style="font-size: 30px">Services :</h2>
+          Own customization <br />
+          AI for maintainance<br />
+          Spare parts finder <br />
+          Manuals <br />
+          Safety
+        </div>
+        <div id="footerlocations">
+          <h2 style="font-size: 30px">Locations :</h2>
+          Germany <br />
+          Australia <br />
+          India <br />
+          Italy
+        </div>
+        <div id="connectus">
+          <h2 style="font-size: 30px">Connect us :</h2>
+          <a
+            href="https://www.instagram.com"
+            style="text-decoration: none; color: white"
+            >Instagram</a
+          >
+          <br />
+          <a
+            href="https://www.facebook.com"
+            style="text-decoration: none; color: white"
+            >Facebook</a
+          ><br />
+          <a
+            href="https://www.youtube.com"
+            style="text-decoration: none; color: white"
+            >Youtube</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from("header", {
+      opacity: 0,
+      duration: 1,
+    });
+    gsap.from("#someinfo", {
+      y: -100,
+      delay: 0.5,
+      opacity: 0,
+    });
+    gsap.from("#recobworld", {
+      opacity: 0,
+      y: -100,
+      delay: 0.5,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: "#recobworld",
+      },
+    });
+    gsap.from("#car1container", {
+      opacity: 0,
+      delay: 0.2,
+      y: -200,
+      duration: 1,
+      scrollTrigger: "#car1container",
+    });
+    gsap.from("#car2container", {
+      opacity: 0,
+      delay: 0.2,
+      duration: 1,
+      y: -200,
+      scrollTrigger: "#car2container",
+    });
+    gsap.from("#middlecontaineroflittleshowroom", {
+      opacity: 0,
+      duration: 1,
+      delay: 0.2,
+      x: -1000,
+      scrollTrigger: "#middlecontaineroflittleshowroom",
+    });
+    gsap.from("#middlesub", {
+      x: -100,
+      y: -50,
+      duration: 1,
+      delay: 0.5,
+      scrollTrigger: "#middlecontaineroflittleshowroom",
+    });
+    gsap.from("#car3container", {
+      opacity: 0,
+      delay: 0.2,
+      duration: 1,
+      y: -200,
+      scrollTrigger: "#car3container",
+    });
+    gsap.from("#car4container", {
+      opacity: 0,
+      delay: 0.2,
+      duration: 1,
+      y: -200,
+      scrollTrigger: "#car4container",
+    });
+    gsap.from("#middlecontainer", {
+      y: -100,
+      x: -1000,
+      scrollTrigger: "#middlecontainer",
+    });
+    gsap.from("#discoverelement1", {
+      opacity: 0,
+      y: -100,
+      scrollTrigger: "#discoverelement1",
+    });
+    gsap.from("#discoverelement2", {
+      opacity: 0,
+      y: -100,
+      delay: 0.2,
+      scrollTrigger: "#discoverelement1",
+    });
+    gsap.from("#discoverelement3", {
+      opacity: 0,
+      y: -100,
+      delay: 0.4,
+      scrollTrigger: "#discoverelement1",
+    });
+    gsap.from("footer", {
+      opacity: 0,
+      scrollTrigger: "footer",
+    });
+  </script>
+</html>

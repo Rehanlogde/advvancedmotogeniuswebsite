@@ -1,0 +1,576 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find your spare parts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'spareparts.css'%}">
+</head>
+<style>
+    body{
+        background-color: wheat;
+    }
+    .astonmartinspareparts{
+        background-image: url("{%static 'C:/Users/rehan/OneDrive/Documents/Advanced Motogenius website (Diploma Project)/Actualimplementation/static_files/images/astonmartinbg.png'%}");
+        background-size: cover;
+        margin-left: -10px;
+        margin-bottom: 50px;
+        margin-right: -10px;
+        padding: 10px;
+        overflow-x: auto;
+        background-repeat: no-repeat;
+        color: white;
+        margin-top: 20px;
+    }
+    .ferrarispareparts{
+        
+        background-image: url("{%static 'C:/Users/rehan/OneDrive/Documents/Advanced Motogenius website (Diploma Project)/Actualimplementation/static_files/images/ferraribg.png'%}");
+        background-size: cover;
+        margin-left: -10px;
+        color: white;
+        margin-right: -10px;
+        padding: 10px;
+        background-repeat: no-repeat;
+        margin-bottom: 50px;
+        margin-top: 20px;
+    }
+    .ktmspareparts{
+        background-image: url("{%static 'C:/Users/rehan/OneDrive/Documents/Advanced Motogenius website (Diploma Project)/Actualimplementation/static_files/images/ktmsp.png'%}");
+        background-size: cover;
+        margin-left: -10px;
+        color: white;
+        margin-bottom: 50px;
+        margin-right: -10px;
+        padding: 10px;
+        background-repeat: no-repeat;
+        margin-top: 20px;
+    }
+    .mercedespareparts{
+        background-image: url("{%static 'C:/Users/rehan/OneDrive/Documents/Advanced Motogenius website (Diploma Project)/Actualimplementation/static_files/images/mercedessp.png'%}");
+        background-size: cover;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding: 10px;
+        color: white;
+        background-repeat: no-repeat;
+        margin-bottom: 50px;
+        margin-top: 20px;
+    }
+    .porschespareparts{
+        background-image: url("{%static 'C:/Users/rehan/OneDrive/Documents/Advanced Motogenius website (Diploma Project)/Actualimplementation/static_files/images/porschebg.png'%}");
+        background-size: cover;
+        margin-left: -10px;
+        margin-right: -10px;
+        color: white;
+        padding: 10px;
+        background-repeat: no-repeat;
+        margin-bottom: 50px;
+        margin-top: 20px;
+    }
+    .kawasakispareparts{
+        background-image: url("{%static 'C:/Users/rehan/OneDrive/Documents/Advanced Motogenius website (Diploma Project)/Actualimplementation/static_files/images/kawasakibg.png'%}");
+        background-size: cover;
+        margin-bottom: 50px;
+        margin-left: -10px;
+        margin-right: -10px;
+        color: white;
+        padding: 10px;
+        background-repeat: no-repeat;
+        margin-top: 20px;
+    }
+    .lamborghinispareparts{
+        background-image: url("{%static 'C:/Users/rehan/OneDrive/Documents/Advanced Motogenius website (Diploma Project)/Actualimplementation/static_files/images/lamborghinibg.png'%}");
+        background-size: cover;
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-bottom: 50px;
+        color: white;
+        padding: 10px;
+        background-repeat: no-repeat;
+        margin-top: 20px;
+    }
+    .audispareparts{
+        background-image: url("{%static 'C:/Users/rehan/OneDrive/Documents/Advanced Motogenius website (Diploma Project)/Actualimplementation/static_files/images/audibg.png'%}");
+        background-size: cover;
+        margin-left: -10px;
+        margin-right: -10px;
+        color: white;
+        padding: 10px;
+        background-repeat: no-repeat;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <header>
+
+        <h1 align="center" style="font-size: 70px;font-family: 'Bebas Neue', sans-serif; letter-spacing: 3px; color: black; ">RECOB
+        </h1>
+        <div id="headerbuttons">
+            <a href="/registration"><button>Register</button></a>
+            <a href="/login"><button>Login</button></a>
+        </div>
+    </header>
+
+    <div class="actualbody">
+
+    <div class="searchingsection">
+        <div class="searchbarsection">
+        <input type="search" placeholder="Search for spare parts" list="lists" id="search" >
+        <datalist id="lists">
+            <option value="LED headlights"></option>
+            <option value="DRL"></option>
+            <option value="Indicators"></option>
+            <option value="Suspension"></option>
+            <option value="Door"></option>
+        </datalist> 
+        </div>
+       <div class="searchresults">
+
+        </div>
+    </div>
+        <div class="sparepartscontainers">
+        
+            <div class="astonmartinspareparts">
+
+                <h1>Aston martin spare parts</h1>
+                <div class="actualcontainers">
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand1part1actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand1part1urlforimg}}" alt="">
+                    </div>
+                    
+                    <a href="spfinderorderpage/?partname={{brand1part1name}}"><button id="spbuttons">Order now</button></a>
+                    
+                </div>
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand1part2actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand1part2urlforimg}}" alt="">
+                    </div>
+                    
+                   <a href="spfinderorderpage/?partname={{brand1part2name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand1part3actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand1part3urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand1part3name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand1part4actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand1part4urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand1part4name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                </div>
+            </div>      
+            <div class="ferrarispareparts">
+                
+                <h1>Ferrari spare parts</h1>
+                <div class="actualcontainers">
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand2part1actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand2part1urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand2part1name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand2part2actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand2part2urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand2part2name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand2part3actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand2part3urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand2part3name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand2part4actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand2part4urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand2part4name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                </div>
+            </div>
+        
+            <div class="mercedespareparts">
+                
+                <h1>Mercedes spare parts</h1>
+                <div class="actualcontainers">
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand3part1actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand3part1urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand3part1name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand3part2actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand3part2urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand3part2name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>          
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand3part3actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand3part3urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand3part4name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand3part4actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand3part4urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand3part4name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+
+                </div>
+            </div>
+        
+            <div class="ktmspareparts">
+                
+                <h1>KTM spare parts</h1>
+                <div class="actualcontainers">
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand4part1actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand4part1urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand4part1name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand4part2actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand4part2urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand4part2name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>          
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand4part3actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand4part3urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand4part3name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand4part4actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand4part4urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand4part4name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>            
+                </div>
+            </div>
+        
+            <div class="audispareparts">
+                
+                <h1>Audi spare parts</h1>
+                <div class="actualcontainers">
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand5part1actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand5part1urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand5part1name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand5part2actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand5part2urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand5part2name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand5part3actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand5part3urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand5part3name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand5part4actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand5part4urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand5part4name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                </div>
+            </div>      
+            <div class="kawasakispareparts">
+                
+                <h1>Kawasaki spare parts</h1>
+                <div class="actualcontainers">
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand6part1actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand6part1urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand6part1name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand6part2actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand6part2urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand6part2name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand6part3actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand6part3urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand6part3name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                    <div id="containers">
+                    <h2 align="center" id="h2">{{brand6part4actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand6part4urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand6part4name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                </div>
+            </div>
+<div class="porschespareparts">
+                
+                <h1>Porsche spare parts</h1>
+                <div class="actualcontainers">
+                    <div id="containers">
+                    <h2 align="center" id="h2">{{brand7part1actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand7part1urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand7part1name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                    <div id="containers">
+                    <h2 align="center" id="h2">{{brand7part2actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand7part2urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand7part2name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                    <div id="containers">
+                    <h2 align="center" id="h2">{{brand7part3actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand7part3urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand7part3name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                    <div id="containers">
+                    <h2 align="center" id="h2">{{brand7part4actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand7part4urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand7part4name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+
+                </div>
+            </div>
+        
+            <div class="lamborghinispareparts">
+                
+                <h1>Lamborghini spare parts</h1>
+                <div class="actualcontainers">
+                    <div id="containers">
+                    <h2 align="center" id="h2">{{brand8part1actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand8part1urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand8part1name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                    <div id="containers">
+                    <h2 align="center" id="h2">{{brand8part2actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand8part2urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand8part2name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div>           
+                <div id="containers">
+                    <h2 align="center" id="h2">{{brand8part3actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand8part3urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand8part3name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                    <div id="containers">
+                    <h2 align="center" id="h2">{{brand8part4actualpartname}}</h2>
+                    <div class="imgsection">
+                        <img id="img" src="{{brand8part4urlforimg}}" alt="">
+                    </div>
+                    <a href="spfinderorderpage/?partname={{brand8part4name}}"><button id="spbuttons">Order now</button></a>
+                
+                </div> 
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>var searchinput = document.getElementById("search");
+var searchresultsection = document.getElementsByClassName("searchresults")[0];
+var bodyelement = document.body;
+var checkflag = 0;
+var sparepartscontainers = document.querySelectorAll(".sparepartscontainers #containers")
+function showsearchresultsection() {
+    if (checkflag == 0) {
+        searchresultsection.style.visibility = "visible";
+        console.log("shown successfully ");
+        checkflag = 1;
+    }
+}
+
+function hidehidingelements() {  
+    if (checkflag == 1) {
+        searchresultsection.style.visibility = "hidden";  
+        checkflag = 0;
+    }
+}
+
+searchinput.addEventListener("click",function(event){
+    event.stopPropagation()
+    showsearchresultsection()
+})
+
+bodyelement.addEventListener("click", hidehidingelements)
+
+searchinput.addEventListener("input", function () {
+    const text = searchinput.value.toLowerCase()
+
+        searchresultsection.innerHTML = " "
+        if (text == "") {
+                return;
+        }
+    
+    sparepartscontainers.forEach(function(item) {
+
+    const h2element=  item.querySelector("h2")
+    if (h2element) {
+    
+    h2value= h2element.textContent.toLowerCase()
+
+    if (h2value.includes(text)) {
+        var clone = item.cloneNode(true)
+        searchresultsection.append(clone) 
+    }  
+    }
+})
+})
+    gsap.from(".ferrarispareparts",{
+        opacity : 0 ,
+        x : -300,
+        delay : 0.2,
+        duration : 1,
+        scrollTrigger : ".ferrarispareparts"
+    })
+    gsap.from(".lamborghinispareparts",{
+        opacity : 0 ,
+        x : -300,
+        delay : 0.2,
+        duration : 1,
+        scrollTrigger : ".lamborghinispareparts"
+    })
+        gsap.from(".porschespareparts",{
+        opacity : 0 ,
+        x : -300,
+        delay : 0.2,
+        duration : 1,
+        scrollTrigger : ".porschespareparts"
+    })
+        gsap.from(".lexusspareparts",{
+        opacity : 0 ,
+        x : -300,
+        delay : 0.2,
+        duration : 1,
+        scrollTrigger : ".lexusspareparts"
+    })
+        gsap.from(".kawasakispareparts",{
+        opacity : 0 ,
+        x : -300,
+        delay : 0.2,
+        duration : 1,
+        scrollTrigger : ".kawasakispareparts"
+    })
+        gsap.from(".astonmartinspareparts",{
+        opacity : 0 ,
+        x : -300,
+        duration : 1
+    })
+
+        gsap.from(".ktmspareparts",{
+        opacity : 0 ,
+        x : -300,
+        duration : 1,
+        scrollTrigger : ".ktmspareparts"
+    })
+
+            gsap.from(".mercedespareparts",{
+        opacity : 0 ,
+        x : -300,
+        duration : 1,
+        scrollTrigger : ".mercedespareparts"
+    })
+
+            gsap.from(".audispareparts",{
+        opacity : 0 ,
+        x : -300,
+        duration : 1,
+        scrollTrigger : ".audispareparts"
+    })
+</script>
+</html>

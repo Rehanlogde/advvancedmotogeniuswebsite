@@ -1,0 +1,247 @@
+header {
+  margin-top: -50px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  margin-left: -30px;
+  position: relative;
+  color: black;
+  z-index: 10;
+  margin-right: -30px;
+}
+#headerbuttons {
+  margin-left: 1290px;
+  display: flex;
+  margin-top: -120px;
+}
+
+button {
+  margin-left: 10px;
+  background-color: transparent;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  height: 45px;
+  transition-duration: 0.5s;
+  font-size: 20px;
+  width: 110px;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+.main-container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 40px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  border-radius: 0;
+}
+
+.brand-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+  background: transparent;
+  padding: 25px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+a.brand {
+  text-decoration: none;
+}
+
+.brand {
+  padding: 15px;
+  width: 180px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.brand:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.brand-logo {
+  width: 80%;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+  transition: transform 0.4s ease;
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.1);
+}
+
+.brand-name {
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  background: #cccccc;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  padding: 0 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: background 0.4s ease;
+}
+
+.brand:hover .brand-name {
+  background: #999999;
+}
+
+.cars-container {
+  display: block;
+  background: transparent;
+}
+
+.brand-section {
+  margin-bottom: 50px;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.brand-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.brand-header .brand-logo {
+  width: 60px;
+  height: 40px;
+  margin-right: 15px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.brand-header .brand-name {
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  background: #cccccc;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.brand-cars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 25px;
+  justify-items: start;
+}
+
+.car {
+  height: 150px;
+  width: 500px;
+  background: #e0e0e0;
+  border-radius: 12px;
+  border: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.car:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background: #d0d0d0;
+}
+
+.car img {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.car:hover img {
+  transform: scale(1.05);
+}
+
+.car-name {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+  color: #000000;
+  text-align: center;
+  font-weight: 600;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: color 0.4s ease;
+}
+
+.car:hover .car-name {
+  color: #333333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}

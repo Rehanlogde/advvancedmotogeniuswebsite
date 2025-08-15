@@ -1,0 +1,78 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RECOT - RECOB BOT</title>
+    <link rel="stylesheet" href="{%static 'ai.css' %}" />
+  </head>
+  <style></style>
+  <body>
+    <header>
+      <h1 align="center" id="h1">Welcome to RECOT - RECOB BOT</h1>
+    </header>
+    <div class="someinfo">
+      <h2 align="center" id="h2">We have a virtual assistant for you !</h2>
+    </div>
+    <br />
+    <!--     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/qyoYaZERYOZtrUlI/scene.splinecode" id="splinemodel"></spline-viewer>
+     -->
+    <div class="scrolldownbuttonsection">
+      <a href="#chatsection">
+        <button id="scrolldownbutton">
+          Scroll to chat<br />
+
+          <img
+            src="{%static '/images/scroll-down-icon-drag-push-260nw-1556855036 (1).png'%}"
+            alt="not avail"
+            id="scrolldownimg"
+          />
+        </button>
+      </a>
+    </div>
+    <div class="chatsection" id="chatsection">
+      <h2 align="center">Clear your doubts with our smart chatbot - RECOT</h2>
+      <div class="chatbotreply">
+        <div id="actualreplies">
+          <div id="chatbotmsg">
+            <h2>Recot :</h2>
+            <p>How can i Help you</p>
+          </div>
+        </div>
+      </div>
+      <div class="messagesection">
+        <input type="text" placeholder="message" id="usermsg" />
+        <button id="sendbutton">Send</button>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var chatsection = $("#actualreplies");
+      var sendbutton = document.getElementById("sendbutton");
+      var usermsgsection = document.getElementById("usermsg");
+      sendbutton.addEventListener("click", function () {
+        var usermsg = $("#usermsg").val();
+        chatsection.append("<h2>You : </h2><p>" + usermsg + "</p><br>");
+        $.ajax({
+          url: "/botresp/",
+          method: "GET",
+          data: {
+            message: usermsg,
+          },
+          success: function (response) {
+            var reply = response.reply;
+            usermsgsection.value = "";
+            chatsection.append("<h2>Bot : </h2><p>" + reply + "</p><br>");
+          },
+        });
+      });
+    });
+    window.onload = function () {
+      window.scrollTo(0, 0);
+    };
+  </script>
+</html>

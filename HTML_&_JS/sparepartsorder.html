@@ -1,0 +1,43 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order</title>
+    <link rel="stylesheet" href="{%static 'sparepartsorder.css'%}" />
+  </head>
+  <body>
+    <style>
+      body {
+        background-image: url("{%static 'images/sparepartsorders.jpg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
+    <h1 align="center" style="color: white">Spare Parts ordering</h1>
+    <div class="formcontainer">
+      <form action="/ordersuccess/" method="get">
+        <h2>{{actualpartname}}</h2>
+        <img src="{{partnameimgurl}}" alt="Image" id="img1" />
+        <br />
+
+        <label> Quantity:</label>
+        <select name="quantity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+        <p>Price: {{partprice}}/-</p>
+
+        <input type="hidden" name="partname" value="{{actualpartname}}" />
+        <input type="hidden" name="partprice" value="{{partprice}}" />
+
+        <input type="submit" value="Order" />
+      </form>
+    </div>
+  </body>
+</html>

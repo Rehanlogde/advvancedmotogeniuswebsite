@@ -1,0 +1,663 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle Showroom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\showroom.css'%}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1
+        align="center"
+        style="
+          font-size: 70px;
+          font-family: 'Bebas Neue', sans-serif;
+          letter-spacing: 3px;
+        "
+      >
+        RECOB
+      </h1>
+      <div id="headerbuttons">
+        <a href="/registration"><button>Register</button></a>
+        <a href="/login"><button>Login</button></a>
+      </div>
+    </header>
+    <div class="main-container" data-name="name: Main Container">
+      <div class="brand-container" data-name="name: Brand Container">
+        <a href="#bmw-cars" class="brand" data-name="name: Brand BMW">
+          <img
+            src="https://www.pngmart.com/files/23/Bmw-Logo-PNG-Clipart.png"
+            alt="BMW Logo"
+            class="brand-logo"
+          />
+          <div class="brand-name">BMW</div>
+        </a>
+        <a href="#ferrari-cars" class="brand" data-name="name: Brand Ferrari">
+          <img
+            src="https://www.pngmart.com/files/15/Ferrari-Logo-Transparent-Background.png"
+            alt="Ferrari Logo"
+            class="brand-logo"
+          />
+          <div class="brand-name">Ferrari</div>
+        </a>
+        <a href="#mercedes-cars" class="brand" data-name="name: Brand Mercedes">
+          <img
+            src="https://www.pngmart.com/files/2/Mercedes-Logo-PNG-Photos.png"
+            alt="Mercedes Logo"
+            class="brand-logo"
+          />
+          <div class="brand-name">Mercedes</div>
+        </a>
+        <a
+          href="#aston-cars"
+          class="brand"
+          data-name="name: Brand Aston Martin"
+        >
+          <img
+            src="https://www.pngmart.com/files/10/Aston-Martin-Logo-PNG-Clipart.png"
+            alt="Aston Martin Logo"
+            class="brand-logo"
+          />
+          <div class="brand-name">Aston Martin</div>
+        </a>
+        <a href="#ktm-bikes" class="brand" data-name="name: Brand KTM">
+          <img
+            src="https://www.pngplay.com/wp-content/uploads/13/KTM-Download-Free-PNG.png"
+            alt="KTM Logo"
+            class="brand-logo"
+          />
+          <div class="brand-name">KTM</div>
+        </a>
+        <a
+          href="#kawasaki-bikes"
+          class="brand"
+          data-name="name: Brand Kawasaki"
+        >
+          <img
+            src="https://www.freepnglogos.com/uploads/kawasaki-png-logo/kawasaki-racing-png-logo-2.png"
+            alt="Kawasaki Logo"
+            class="brand-logo"
+          />
+          <div class="brand-name">Kawasaki</div>
+        </a>
+        <a href="#audi-cars" class="brand" data-name="name: Brand Audi">
+          <img
+            src="https://www.pngmart.com/files/10/Audi-Logo-PNG-Photos.png"
+            alt="Audi Logo"
+            class="brand-logo"
+          />
+          <div class="brand-name">Audi</div>
+        </a>
+        <a href="#lexus-cars" class="brand" data-name="name: Brand Lexus">
+          <img
+            src="https://www.pngmart.com/files/22/Lexus-Logo-PNG-File.png"
+            alt="Lexus Logo"
+            class="brand-logo"
+          />
+          <div class="brand-name">Lexus</div>
+        </a>
+        <a href="#porsche-cars" class="brand" data-name="name: Brand Porsche">
+          <img
+            src="https://www.pngmart.com/files/5/Porsche-Logo-Transparent-PNG.png"
+            alt="Porsche Logo"
+            class="brand-logo"
+          />
+          <div class="brand-name">Porsche</div>
+        </a>
+        <a
+          href="#lamborghini-cars"
+          class="brand"
+          data-name="name: Brand Lamborghini"
+        >
+          <img
+            src="https://www.pngmart.com/files/22/Lamborghini-Logo-PNG-HD-Isolated.png"
+            alt="Lamborghini Logo"
+            class="brand-logo"
+          />
+          <div class="brand-name">Lamborghini</div>
+        </a>
+      </div>
+      <div class="cars-container" data-name="name: Cars Container">
+        <div class="brand-section" data-name="name: BMW Section">
+          <div class="brand-header" data-name="name: BMW Header">
+            <img
+              src="https://www.pngmart.com/files/23/Bmw-Logo-PNG-Clipart.png"
+              alt="BMW Logo"
+              class="brand-logo"
+            />
+            <div class="brand-name">BMW</div>
+          </div>
+          <div class="brand-cars" id="bmw-cars" data-name="name: BMW Cars">
+            <div class="car" data-name="name: BMW Car 1">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/BMW-4-Series/2478/1558173689738/front-left-side-47.jpg?tr=w-664"
+                alt="BMW 4 Series"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=4series" class="car-name"
+                  >4 Series</a
+                >
+              </div>
+            </div>
+            <div class="car" data-name="name: BMW Car 2">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/M5-2025/11821/1719462197562/front-left-side-47.jpg?tr=w-664"
+                alt="BMW M5"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=m5" class="car-name">M5</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: BMW Car 3">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/X5-2023/10452/1688992642182/front-left-side-47.jpg?tr=w-664"
+                alt="BMW X5"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=x5" class="car-name">X5</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: BMW Car 4">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/7-Series/10575/1689671971561/front-left-side-47.jpg?tr=w-664"
+                alt="BMW 7 Series"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=7series" class="car-name"
+                  >7 Series</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-section" data-name="name: Ferrari Section">
+          <div class="brand-header" data-name="name: Ferrari Header">
+            <img
+              src="https://www.pngmart.com/files/15/Ferrari-Logo-Transparent-Background.png"
+              alt="Ferrari Logo"
+              class="brand-logo"
+            />
+            <div class="brand-name">Ferrari</div>
+          </div>
+          <div
+            class="brand-cars"
+            id="ferrari-cars"
+            data-name="name: Ferrari Cars"
+          >
+            <div class="car" data-name="name: Ferrari Car 1">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Ferrari/Roma/7857/1591619120027/front-left-side-47.jpg?tr=w-664"
+                alt="Ferrari Roma"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=roma" class="car-name"
+                  >Roma</a
+                >
+              </div>
+            </div>
+            <div class="car" data-name="name: Ferrari Car 2">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Ferrari/SF90-Stradale/7858/1591619661237/front-left-side-47.jpg?tr=w-664"
+                alt="Ferrari SF90"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=sf90" class="car-name"
+                  >SF90</a
+                >
+              </div>
+            </div>
+            <div class="car" data-name="name: Ferrari Car 3">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/360x240/Ferrari/Ferrari-488-GTB/047.jpg"
+                alt="Ferrari 488"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=488" class="car-name">488</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Ferrari Car 4">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Ferrari/Ferrari-Portofino/6172/1550828910903/front-left-side-47.jpg?tr=w-664"
+                alt="Ferrari Portofino"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=portofino" class="car-name"
+                  >Portofino</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-section" data-name="name: Mercedes Section">
+          <div class="brand-header" data-name="name: Mercedes Header">
+            <img
+              src="https://www.pngmart.com/files/2/Mercedes-Logo-PNG-Photos.png"
+              alt="Mercedes Logo"
+              class="brand-logo"
+            />
+            <div class="brand-name">Mercedes</div>
+          </div>
+          <div
+            class="brand-cars"
+            id="mercedes-cars"
+            data-name="name: Mercedes Cars"
+          >
+            <div class="car" data-name="name: Mercedes Car 1">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/S-Class/10853/1690451611932/front-left-side-47.jpg?tr=w-664"
+                alt="Mercedes S-Class"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=sclass" class="car-name"
+                  >S-Class</a
+                >
+              </div>
+            </div>
+            <div class="car" data-name="name: Mercedes Car 2">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/GLE/11927/1724843429681/front-left-side-47.jpg?tr=w-664"
+                alt="Mercedes GLE"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=gle" class="car-name">GLE</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Mercedes Car 3">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/E-Class/9790/1728652931654/front-left-side-47.jpg?tr=w-664"
+                alt="Mercedes E-Class"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=eclass" class="car-name"
+                  >E-Class</a
+                >
+              </div>
+            </div>
+            <div class="car" data-name="name: Mercedes Car 4">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/GLA-2024/9731/1679039244149/front-left-side-47.jpg?tr=w-664"
+                alt="Mercedes GLA"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=gla" class="car-name">GLA</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-section" data-name="name: Aston Martin Section">
+          <div class="brand-header" data-name="name: Aston Martin Header">
+            <img
+              src="https://www.pngmart.com/files/10/Aston-Martin-Logo-PNG-Clipart.png"
+              alt="Aston Martin Logo"
+              class="brand-logo"
+            />
+            <div class="brand-name">Aston Martin</div>
+          </div>
+          <div
+            class="brand-cars"
+            id="aston-cars"
+            data-name="name: Aston Martin Cars"
+          >
+            <div class="car" data-name="name: Aston Martin Car 1">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Aston-Martin/DB11/8064/1676268014798/front-left-side-47.jpg?tr=w-664"
+                alt="Aston Martin DB11"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=db11" class="car-name"
+                  >DB11</a
+                >
+              </div>
+            </div>
+            <div class="car" data-name="name: Aston Martin Car 2">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Aston-Martin/Vantage/11671/1713933486248/front-left-side-47.jpg?tr=w-664"
+                alt="Aston Martin Vantage"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=vantage" class="car-name"
+                  >Vantage</a
+                >
+              </div>
+            </div>
+            <div class="car" data-name="name: Aston Martin Car 3">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Aston-Martin/DBX/9386/1676270378012/front-left-side-47.jpg?tr=w-664"
+                alt="Aston Martin DBX"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=dbx" class="car-name">DBX</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Aston Martin Car 4">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/360x240/Aston-Martin/Aston-Martin-Rapide/047.jpg"
+                alt="Aston Martin Rapide"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=rapide" class="car-name"
+                  >Rapide</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-section" data-name="name: KTM Section">
+          <div class="brand-header" data-name="name: KTM Header">
+            <img
+              src="https://www.pngplay.com/wp-content/uploads/13/KTM-Download-Free-PNG.png"
+              alt="KTM Logo"
+              class="brand-logo"
+            />
+            <div class="brand-name">KTM</div>
+          </div>
+          <div class="brand-cars" id="ktm-bikes" data-name="name: KTM bikes">
+            <div class="car" data-name="name: KTM Bike 1">
+              <img
+                src="https://imgd.aeplcdn.com/664x374/n/cw/ec/1/versions/--standard-obd-2b1741772118539.jpg?q=80"
+                alt="KTM 390"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=390">390</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: KTM Bike 2">
+              <img
+                src="https://imgd.aeplcdn.com/664x374/n/cw/ec/176375/890-duke-right-side-view.png?isig=0&q=80"
+                alt="KTM 890"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=890">890</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: KTM Bike 3">
+              <img
+                src="https://imgd.aeplcdn.com/664x374/n/cw/ec/1/versions/ktm-1390-super-duke-r-standard1731911825300.jpg?q=80"
+                alt="KTM 1390"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=1390">1390</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: KTM Bike 4">
+              <img
+                src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/ktm-select-model-gp-editiond-1670826275682.png?q=80"
+                alt="KTM RC GP"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=rcgp">RC GP</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-section" data-name="name: Kawasaki Section">
+          <div class="brand-header" data-name="name: Kawasaki Header">
+            <img
+              src="https://www.freepnglogos.com/uploads/kawasaki-png-logo/kawasaki-racing-png-logo-2.png"
+              alt="Kawasaki Logo"
+              class="brand-logo"
+            />
+            <div class="brand-name">Kawasaki</div>
+          </div>
+          <div
+            class="brand-cars"
+            id="kawasaki-bikes"
+            data-name="name: Kawasaki Bikes"
+          >
+            <div class="car" data-name="name: Kawasaki Bike 1">
+              <img
+                src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/kawasaki-select-model-pearl-robotic-white-1662979616807.jpg?q=80"
+                alt="Kawasaki ZX10R"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=zx10r">ZX10R</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Kawasaki Bike 2">
+              <img
+                src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/kawasaki-select-model-metallic-graphite-gray--metallic-diablo-black-1704094718502.png?q=80"
+                alt="Kawasaki ZX6R"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=zx6r">ZX6R</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Kawasaki Bike 3">
+              <img
+                src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/kawasaki-select-model-ebony--metallic-matte-graphene-steel-gray-1708517145136.jpeg?q=80"
+                alt="Kawasaki Z900"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=z900">Z900</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Kawasaki Bike 4">
+              <img
+                src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/kawasaki-select-model-mirror-coated-matte-spark-black-1676442407791.png?q=80"
+                alt="Kawasaki H2R"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=h2r">H2R</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-section" data-name="name: Audi Section">
+          <div class="brand-header" data-name="name: Audi Header">
+            <img
+              src="https://www.pngmart.com/files/10/Audi-Logo-PNG-Photos.png"
+              alt="Audi Logo"
+              class="brand-logo"
+            />
+            <div class="brand-name">Audi</div>
+          </div>
+          <div class="brand-cars" id="audi-cars" data-name="name: Audi Cars">
+            <div class="car" data-name="name: Audi Car 1">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A4/10548/1732257078935/front-left-side-47.jpg?tr=w-664"
+                alt="Audi A4"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=a4">A4</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Audi Car 2">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/Q7/12198/1732789850926/front-left-side-47.jpg?tr=w-664"
+                alt="Audi Q7"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=q7">Q7</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Audi Car 3">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A6/10552/1708935437947/front-left-side-47.jpg?tr=w-664"
+                alt="Audi A6"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=a6">A6</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Audi Car 4">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/Q5/10556/1689594416925/front-left-side-47.jpg?tr=w-664"
+                alt="Audi Q5"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=q5">Q5</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-section" data-name="name: Lexus Section">
+          <div class="brand-header" data-name="name: Lexus Header">
+            <img
+              src="https://www.pngmart.com/files/22/Lexus-Logo-PNG-File.png"
+              alt="Lexus Logo"
+              class="brand-logo"
+            />
+            <div class="brand-name">Lexus</div>
+          </div>
+          <div class="brand-cars" id="lexus-cars" data-name="name: Lexus Cars">
+            <div class="car" data-name="name: Lexus Car 1">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Lexus/LX/8657/1671778873338/front-left-side-47.jpg?tr=w-664"
+                alt="Lexus LX"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=lx">LX</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Lexus Car 2">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Lexus/RX/11359/1701686322470/front-left-side-47.jpg?tr=w-664"
+                alt="Lexus RX"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=rx">RX</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Lexus Car 3">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Lexus/ES/9399/1665652746848/front-left-side-47.jpg?tr=w-664"
+                alt="Lexus ES"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=es">ES</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Lexus Car 4">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Lexus/NX/8887/1646816229708/front-left-side-47.jpg?tr=w-664"
+                alt="Lexus NX"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=nx">NX</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-section" data-name="name: Porsche Section">
+          <div class="brand-header" data-name="name: Porsche Header">
+            <img
+              src="https://www.pngmart.com/files/5/Porsche-Logo-Transparent-PNG.png"
+              alt="Porsche Logo"
+              class="brand-logo"
+            />
+            <div class="brand-name">Porsche</div>
+          </div>
+          <div
+            class="brand-cars"
+            id="porsche-cars"
+            data-name="name: Porsche Cars"
+          >
+            <div class="car" data-name="name: Porsche Car 1">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/911/11757/1717680690776/front-left-side-47.jpg?tr=w-664"
+                alt="Porsche 911"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=911">911</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Porsche Car 2">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/Cayenne-2024/9903/Porsche-Cayenne-2024-/1681882894783/front-left-side-47.jpg?tr=w-664"
+                alt="Porsche Cayenne"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=cayenne">Cayenne</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Porsche Car 3">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/Panamera/11350/1701081788330/front-left-side-47.jpg?tr=w-664"
+                alt="Porsche Panamera"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=panamera">Panamera</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Porsche Car 4">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/Macan/10974/1690871596474/front-left-side-47.jpg?tr=w-664"
+                alt="Porsche Macan"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=macan">Macan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-section" data-name="name: Lamborghini Section">
+          <div class="brand-header" data-name="name: Lamborghini Header">
+            <img
+              src="https://www.pngmart.com/files/22/Lamborghini-Logo-PNG-HD-Isolated.png"
+              alt="Lamborghini Logo"
+              class="brand-logo"
+            />
+            <div class="brand-name">Lamborghini</div>
+          </div>
+          <div
+            class="brand-cars"
+            id="lamborghini-cars"
+            data-name="name: Lamborghini Cars"
+          >
+            <div class="car" data-name="name: Lamborghini Car 1">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Aventador/9170/1676530772968/front-left-side-47.jpg?tr=w-664"
+                alt="Lamborghini Aventador"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=avendator">Aventador</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Lamborghini Car 2">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Huracan-EVO/10643/1690010999692/front-left-side-47.jpg?tr=w-664"
+                alt="Lamborghini Huracán"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=huracan">>Huracán</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Lamborghini Car 3">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Urus/10635/1724844423793/front-left-side-47.jpg?tr=w-664"
+                alt="Lamborghini Urus"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=urus">Urus</a>
+              </div>
+            </div>
+            <div class="car" data-name="name: Lamborghini Car 4">
+              <img
+                src="https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/few_off/sian-fkp-37/2024/s2-mobile.jpg"
+                alt="Lamborghini Sian"
+              />
+              <div class="car-name">
+                <a href="/cardetailspage/?carname=sian">Sian</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

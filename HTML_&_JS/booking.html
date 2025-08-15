@@ -1,0 +1,77 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book your car</title>
+    <link
+      rel="stylesheet"
+      href="{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\booking.css'%}"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <h1
+        align="center"
+        style="
+          font-size: 70px;
+          font-family: 'Bebas Neue', sans-serif;
+          letter-spacing: 3px;
+        "
+      >
+        RECOB
+      </h1>
+      <div id="headerbuttons">
+        <a href="/registration"><button>Register</button></a>
+        <a href="/login"><button>Login</button></a>
+      </div>
+    </header>
+
+    <div id="actualbody">
+      <div id="bookingbill">
+        <div id="details">
+          <h2 align="center">The {{name}}</h2>
+        </div>
+        <div id="imgcontainer">
+          <img
+            src="{% static imgpath %}"
+            alt="image cannot be displayed"
+            id="image"
+          />
+        </div>
+        <h2 align="center">Price : {{price}}/-</h2>
+        <div id="buttons">
+          <a href="/bookingresult"
+            ><button id="buttonx">Confirm booking</button></a
+          >
+          <a href="/"><button id="buttonx">Cancel booking</button></a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script>
+    gsap.from("#bookingbill", {
+      x: -1000,
+      duration: 0.5,
+    });
+  </script>
+</html>

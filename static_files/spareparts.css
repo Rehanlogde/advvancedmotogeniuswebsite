@@ -1,0 +1,187 @@
+body {
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+header {
+  margin-top: -50px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  margin-left: -30px;
+  position: relative;
+  color: white;
+  z-index: 10;
+  margin-right: -30px;
+}
+#headerbuttons {
+  margin-left: 1290px;
+  display: flex;
+  margin-top: -120px;
+}
+button {
+  margin-left: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 45px;
+  transition-duration: 0.5s;
+  font-size: 20px;
+  width: 110px;
+}
+button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+.searchingsection {
+  margin-top: 30px;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sparepartscontainers {
+  z-index: 0;
+  position: relative;
+}
+input[type="search"] {
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  padding: 10px;
+  transition: all;
+  transition-duration: 0.8s;
+}
+.searchresults {
+  width: 50vw;
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 0px 0px 5px 1px black;
+  height: 50vh;
+  margin-bottom: -30%;
+  z-index: 1;
+  position: relative;
+  visibility: hidden;
+  margin-top: 1%;
+  overflow: auto;
+  padding: 5%;
+  padding-top: 1%;
+  border-radius: 20px;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  align-items: center;
+}
+.actualcontainers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  margin-left: 0px;
+  margin-top: 50px;
+}
+#containers {
+  height: 500px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  background-color: white;
+  transition: all 0.4s;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+#containers:hover {
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 2px 2px black;
+  margin-top: -10px;
+  background-color: transparent;
+  backdrop-filter: blur(100px);
+}
+#spbuttons {
+  width: 250%;
+  margin-left: -50px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: 2px solid transparent;
+}
+#h2 {
+  color: black;
+}
+#spbuttons:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+}
+#txt1 {
+  margin-left: 100px;
+}
+#txt2 {
+  margin-left: 80px;
+}
+#ordernow {
+  margin-left: 30px;
+  background-color: white;
+  color: black;
+  width: 250px;
+}
+.imgsection {
+  margin-bottom: 20%;
+  height: 60%;
+}
+img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+footer {
+  background-color: black;
+  color: white;
+  height: 450px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-top: 0.5px;
+  margin-bottom: -20px;
+}
+#headingoffooter {
+  display: flex;
+  margin-left: 550px;
+}
+#indianflag {
+  margin-top: 25px;
+  width: 150px;
+  height: 50px;
+}
+#footerelements {
+  display: flex;
+  gap: 250px;
+  margin-left: 200px;
+}
+#footerlocations {
+  font-size: 20px;
+  line-height: 45px;
+}
+#services {
+  font-size: 20px;
+  line-height: 45px;
+}
+#connectus {
+  font-size: 20px;
+  line-height: 45px;
+}
+@media screen and (max-width: 580px) {
+  .searchresults {
+    width: 80vw;
+  }
+}

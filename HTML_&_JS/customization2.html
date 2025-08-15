@@ -1,0 +1,236 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle Customization - Test Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{%static 'customization.css'%}" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="customization-page-container">
+        <div class="car-display-box">
+          <img src="" alt="Customized Vehicle" id="main-car-image" />
+        </div>
+
+        <div class="customization-menu">
+          <div class="category-tabs">
+            <div class="category-tab active" data-target="options-color">
+              Color
+            </div>
+            <div class="category-tab" data-target="options-rims">Rims</div>
+          </div>
+          <div class="options-panel">
+            <div class="options-container active" id="options-color">
+              <div
+                class="option-square active"
+                data-type="color"
+                data-value="red"
+                style="background-color: red"
+              ></div>
+              <div
+                class="option-square"
+                data-type="color"
+                data-value="black"
+                style="background-color: black"
+              ></div>
+              <div
+                class="option-square"
+                data-type="color"
+                data-value="white"
+                style="background-color: white"
+              ></div>
+              <div
+                class="option-square"
+                data-type="color"
+                data-value="yellow"
+                style="background-color: yellow"
+              ></div>
+            </div>
+            <div class="options-container" id="options-rims">
+              <div class="option-square active" data-type="rims" data-value="1">
+                <img
+                  src="https://placehold.co/100x100/e0e0e0/000?text=Rim+1"
+                  class="option-image"
+                />
+              </div>
+              <div class="option-square" data-type="rims" data-value="2">
+                <img
+                  src="https://placehold.co/100x100/e0e0e0/000?text=Rim+2"
+                  class="option-image"
+                />
+              </div>
+              <div class="option-square" data-type="rims" data-value="3">
+                <img
+                  src="https://placehold.co/100x100/e0e0e0/000?text=Rim+3"
+                  class="option-image"
+                />
+              </div>
+              <div class="option-square" data-type="rims" data-value="4">
+                <img
+                  src="https://placehold.co/100x100/e0e0e0/000?text=Rim+4"
+                  class="option-image"
+                />
+              </div>
+              <div class="option-square" data-type="rims" data-value="5">
+                <img
+                  src="https://placehold.co/100x100/e0e0e0/000?text=Rim+5"
+                  class="option-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-controls">
+          <div class="view-btn" data-view="front">Front</div>
+          <div class="view-btn active" data-view="left">Left</div>
+          <div class="view-btn" data-view="right">Right</div>
+          <div class="view-btn" data-view="back">Back</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const IMAGE_URLS = {
+        "left-red-1": "{% static red_left_alloy1_view %}",
+        "left-red-2": "{% static red_left_alloy2_view %}",
+        "left-red-3": "{% static red_left_alloy3_view %}",
+        "left-red-4": "{% static red_left_alloy4_view %}",
+        "left-red-5": "{% static red_left_alloy5_view %}",
+        "left-black-1": "{% static black_left_alloy1_view %}",
+        "left-black-2": "{% static black_left_alloy2_view %}",
+        "left-black-3": "{% static black_left_alloy3_view %}",
+        "left-black-4": "{% static black_left_alloy4_view %}",
+        "left-black-5": "{% static black_left_alloy5_view %}",
+        "left-white-1": "{% static white_left_alloy1_view %}",
+        "left-white-2": "{% static white_left_alloy2_view %}",
+        "left-white-3": "{% static white_left_alloy3_view %}",
+        "left-white-4": "{% static white_left_alloy4_view %}",
+        "left-white-5": "{% static white_left_alloy5_view %}",
+        "right-red-1": "{% static red_right_alloy1_view %}",
+        "right-red-2": "{% static red_right_alloy2_view %}",
+        "right-red-3": "{% static red_right_alloy3_view %}",
+        "right-red-4": "{% static red_right_alloy4_view %}",
+        "right-red-5": "{% static red_right_alloy5_view %}",
+        "right-black-1": "{% static black_right_alloy1_view %}",
+        "right-black-2": "{% static black_right_alloy2_view %}",
+        "right-black-3": "{% static black_right_alloy3_view %}",
+        "right-black-4": "{% static black_right_alloy4_view %}",
+        "right-black-5": "{% static black_right_alloy5_view %}",
+        "right-white-1": "{% static white_right_alloy1_view %}",
+        "right-white-2": "{% static white_right_alloy2_view %}",
+        "right-white-3": "{% static white_right_alloy3_view %}",
+        "right-white-4": "{% static white_right_alloy4_view %}",
+        "right-white-5": "{% static white_right_alloy5_view %}",
+        "front-red-1": "{% static red_front_view %}",
+        "front-red-2": "{% static red_front_view %}",
+        "front-red-3": "{% static red_front_view %}",
+        "front-red-4": "{% static red_front_view %}",
+        "front-red-5": "{% static red_front_view %}",
+        "front-black-1": "{% static black_front_view %}",
+        "front-black-2": "{% static black_front_view %}",
+        "front-black-3": "{% static black_front_view %}",
+        "front-black-4": "{% static black_front_view %}",
+        "front-black-5": "{% static black_front_view %}",
+        "front-white-1": "{% static white_front_view %}",
+        "front-white-2": "{% static white_front_view %}",
+        "front-white-3": "{% static white_front_view %}",
+        "front-white-4": "{% static white_front_view %}",
+        "front-white-5": "{% static white_front_view %}",
+        "front-yellow-1": "{% static yellow_front_view %}",
+        "front-yellow-2": "{% static yellow_front_view %}",
+        "front-yellow-3": "{% static yellow_front_view %}",
+        "front-yellow-4": "{% static yellow_front_view %}",
+        "front-yellow-5": "{% static yellow_front_view %}",
+        "back-red-1": "{% static red_rear_view %}",
+        "back-red-2": "{% static red_rear_view %}",
+        "back-red-3": "{% static red_rear_view %}",
+        "back-red-4": "{% static red_rear_view %}",
+        "back-red-5": "{% static red_rear_view %}",
+        "back-black-1": "{% static black_rear_view %}",
+        "back-black-2": "{% static black_rear_view %}",
+        "back-black-3": "{% static black_rear_view %}",
+        "back-black-4": "{% static black_rear_view %}",
+        "back-black-5": "{% static black_rear_view %}",
+        "back-white-1": "{% static white_rear_view %}",
+        "back-white-2": "{% static white_rear_view %}",
+        "back-white-3": "{% static white_rear_view %}",
+        "back-white-4": "{% static white_rear_view %}",
+        "back-white-5": "{% static white_rear_view %}",
+        "back-yellow-1": "{% static yellow_rear_view %}",
+        "back-yellow-2": "{% static yellow_rear_view %}",
+        "back-yellow-3": "{% static yellow_rear_view %}",
+        "back-yellow-4": "{% static yellow_rear_view %}",
+        "back-yellow-5": "{% static yellow_rear_view %}",
+      };
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mainCarImage = document.getElementById("main-car-image");
+        const allTabs = document.querySelectorAll(".category-tab");
+        const allOptions = document.querySelectorAll(".option-square");
+        const allViewButtons = document.querySelectorAll(".view-btn");
+
+        function updateCar() {
+          const activeView =
+            document.querySelector(".view-btn.active").dataset.view;
+          const activeColor = document.querySelector(
+            '.option-square[data-type="color"].active'
+          ).dataset.value;
+          const activeRim = document.querySelector(
+            '.option-square[data-type="rims"].active'
+          ).dataset.value;
+
+          const imageKey = `${activeView}-${activeColor}-${activeRim}`;
+          console.log(imageKey);
+          const newImageUrl = IMAGE_URLS[imageKey];
+
+          if (newImageUrl) {
+            mainCarImage.src = newImageUrl;
+            mainCarImage.alt = `Car showing: ${activeView} view, ${activeColor} color, rim ${activeRim}`;
+          } else {
+            console.warn("Image URL not found for key:", imageKey);
+          }
+        }
+
+        allTabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            allTabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+            const targetId = tab.dataset.target;
+            document.querySelectorAll(".options-container").forEach((c) => {
+              c.classList.toggle("active", c.id === targetId);
+            });
+          });
+        });
+
+        allOptions.forEach((option) => {
+          option.addEventListener("click", () => {
+            const type = option.dataset.type;
+            document
+              .querySelectorAll(`.option-square[data-type="${type}"]`)
+              .forEach((o) => o.classList.remove("active"));
+            option.classList.add("active");
+            updateCar();
+          });
+        });
+
+        allViewButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            allViewButtons.forEach((b) => b.classList.remove("active"));
+            button.classList.add("active");
+            updateCar();
+          });
+        });
+
+        updateCar();
+      });
+    </script>
+  </body>
+</html>
