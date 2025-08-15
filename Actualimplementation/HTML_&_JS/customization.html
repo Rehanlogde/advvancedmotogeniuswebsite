@@ -1,0 +1,366 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle Customization - Test Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{%static 'customization.css'%}" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="customization-page-container">
+        <div class="car-display-box">
+          <img src="" alt="Customized Vehicle" id="main-car-image" />
+        </div>
+
+        <div class="customization-menu">
+          <div class="category-tabs">
+            <div class="category-tab active" data-target="options-color">
+              Color
+            </div>
+            <div class="category-tab" data-target="options-rims">Rims</div>
+          </div>
+          <div class="options-panel">
+            <div class="options-container active" id="options-color">
+              <div
+                class="option-square active"
+                data-type="color"
+                data-value="blue"
+                style="background-color: red"
+              ></div>
+              <div
+                class="option-square"
+                data-type="color"
+                data-value="red"
+                style="background-color: black"
+              ></div>
+              <div
+                class="option-square"
+                data-type="color"
+                data-value="black"
+                style="background-color: white"
+              ></div>
+              <div
+                class="option-square"
+                data-type="color"
+                data-value="silver"
+                style="background-color: yellow"
+              ></div>
+            </div>
+            <div class="options-container" id="options-rims">
+              <div class="option-square active" data-type="rims" data-value="1">
+                <img
+                  src="https://placehold.co/100x100/e0e0e0/000?text=Rim+1"
+                  class="option-image"
+                />
+              </div>
+              <div class="option-square" data-type="rims" data-value="2">
+                <img
+                  src="https://placehold.co/100x100/e0e0e0/000?text=Rim+2"
+                  class="option-image"
+                />
+              </div>
+              <div class="option-square" data-type="rims" data-value="3">
+                <img
+                  src="https://placehold.co/100x100/e0e0e0/000?text=Rim+3"
+                  class="option-image"
+                />
+              </div>
+              <div class="option-square" data-type="rims" data-value="4">
+                <img
+                  src="https://placehold.co/100x100/e0e0e0/000?text=Rim+4"
+                  class="option-image"
+                />
+              </div>
+              <div class="option-square" data-type="rims" data-value="5">
+                <img
+                  src="https://placehold.co/100x100/e0e0e0/000?text=Rim+5"
+                  class="option-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-controls">
+          <div class="view-btn" data-view="front">Front</div>
+          <div class="view-btn active" data-view="left">Left</div>
+          <div class="view-btn" data-view="right">Right</div>
+          <div class="view-btn" data-view="back">Back</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const IMAGE_URLS = {
+        "left-blue-1":
+          "https://placehold.co/800x500/005a9e/white?text=Left+View%0ABlue%0ARim+1",
+        "left-blue-2":
+          "https://placehold.co/800x500/005a9e/white?text=Left+View%0ABlue%0ARim+2",
+        "left-blue-3":
+          "https://placehold.co/800x500/005a9e/white?text=Left+View%0ABlue%0ARim+3",
+        "left-blue-4":
+          "https://placehold.co/800x500/005a9e/white?text=Left+View%0ABlue%0ARim+4",
+        "left-blue-5":
+          "https://placehold.co/800x500/005a9e/white?text=Left+View%0ABlue%0ARim+5",
+        "left-red-1":
+          "https://placehold.co/800x500/c00/white?text=Left+View%0ARed%0ARim+1",
+        "left-red-2":
+          "https://placehold.co/800x500/c00/white?text=Left+View%0ARed%0ARim+2",
+        "left-red-3":
+          "https://placehold.co/800x500/c00/white?text=Left+View%0ARed%0ARim+3",
+        "left-red-4":
+          "https://placehold.co/800x500/c00/white?text=Left+View%0ARed%0ARim+4",
+        "left-red-5":
+          "https://placehold.co/800x500/c00/white?text=Left+View%0ARed%0ARim+5",
+        "left-black-1":
+          "https://placehold.co/800x500/222/white?text=Left+View%0ABlack%0ARim+1",
+        "left-black-2":
+          "https://placehold.co/800x500/222/white?text=Left+View%0ABlack%0ARim+2",
+        "left-black-3":
+          "https://placehold.co/800x500/222/white?text=Left+View%0ABlack%0ARim+3",
+        "left-black-4":
+          "https://placehold.co/800x500/222/white?text=Left+View%0ABlack%0ARim+4",
+        "left-black-5":
+          "https://placehold.co/800x500/222/white?text=Left+View%0ABlack%0ARim+5",
+        "left-silver-1":
+          "https://placehold.co/800x500/c0c0c0/black?text=Left+View%0ASilver%0ARim+1",
+        "left-silver-2":
+          "https://placehold.co/800x500/c0c0c0/black?text=Left+View%0ASilver%0ARim+2",
+        "left-silver-3":
+          "https://placehold.co/800x500/c0c0c0/black?text=Left+View%0ASilver%0ARim+3",
+        "left-silver-4":
+          "https://placehold.co/800x500/c0c0c0/black?text=Left+View%0ASilver%0ARim+4",
+        "left-silver-5":
+          "https://placehold.co/800x500/c0c0c0/black?text=Left+View%0ASilver%0ARim+5",
+        "left-white-1":
+          "https://placehold.co/800x500/ffffff/black?text=Left+View%0AWhite%0ARim+1",
+        "left-white-2":
+          "https://placehold.co/800x500/ffffff/black?text=Left+View%0AWhite%0ARim+2",
+        "left-white-3":
+          "https://placehold.co/800x500/ffffff/black?text=Left+View%0AWhite%0ARim+3",
+        "left-white-4":
+          "https://placehold.co/800x500/ffffff/black?text=Left+View%0AWhite%0ARim+4",
+        "left-white-5":
+          "https://placehold.co/800x500/ffffff/black?text=Left+View%0AWhite%0ARim+5",
+        "right-blue-1":
+          "https://placehold.co/800x500/005a9e/white?text=Right+View%0ABlue%0ARim+1",
+        "right-blue-2":
+          "https://placehold.co/800x500/005a9e/white?text=Right+View%0ABlue%0ARim+2",
+        "right-blue-3":
+          "https://placehold.co/800x500/005a9e/white?text=Right+View%0ABlue%0ARim+3",
+        "right-blue-4":
+          "https://placehold.co/800x500/005a9e/white?text=Right+View%0ABlue%0ARim+4",
+        "right-blue-5":
+          "https://placehold.co/800x500/005a9e/white?text=Right+View%0ABlue%0ARim+5",
+        "right-red-1":
+          "https://placehold.co/800x500/c00/white?text=Right+View%0ARed%0ARim+1",
+        "right-red-2":
+          "https://placehold.co/800x500/c00/white?text=Right+View%0ARed%0ARim+2",
+        "right-red-3":
+          "https://placehold.co/800x500/c00/white?text=Right+View%0ARed%0ARim+3",
+        "right-red-4":
+          "https://placehold.co/800x500/c00/white?text=Right+View%0ARed%0ARim+4",
+        "right-red-5":
+          "https://placehold.co/800x500/c00/white?text=Right+View%0ARed%0ARim+5",
+        "right-black-1":
+          "https://placehold.co/800x500/222/white?text=Right+View%0ABlack%0ARim+1",
+        "right-black-2":
+          "https://placehold.co/800x500/222/white?text=Right+View%0ABlack%0ARim+2",
+        "right-black-3":
+          "https://placehold.co/800x500/222/white?text=Right+View%0ABlack%0ARim+3",
+        "right-black-4":
+          "https://placehold.co/800x500/222/white?text=Right+View%0ABlack%0ARim+4",
+        "right-black-5":
+          "https://placehold.co/800x500/222/white?text=Right+View%0ABlack%0ARim+5",
+        "right-silver-1":
+          "https://placehold.co/800x500/c0c0c0/black?text=Right+View%0ASilver%0ARim+1",
+        "right-silver-2":
+          "https://placehold.co/800x500/c0c0c0/black?text=Right+View%0ASilver%0ARim+2",
+        "right-silver-3":
+          "https://placehold.co/800x500/c0c0c0/black?text=Right+View%0ASilver%0ARim+3",
+        "right-silver-4":
+          "https://placehold.co/800x500/c0c0c0/black?text=Right+View%0ASilver%0ARim+4",
+        "right-silver-5":
+          "https://placehold.co/800x500/c0c0c0/black?text=Right+View%0ASilver%0ARim+5",
+        "right-white-1":
+          "https://placehold.co/800x500/ffffff/black?text=Right+View%0AWhite%0ARim+1",
+        "right-white-2":
+          "https://placehold.co/800x500/ffffff/black?text=Right+View%0AWhite%0ARim+2",
+        "right-white-3":
+          "https://placehold.co/800x500/ffffff/black?text=Right+View%0AWhite%0ARim+3",
+        "right-white-4":
+          "https://placehold.co/800x500/ffffff/black?text=Right+View%0AWhite%0ARim+4",
+        "right-white-5":
+          "https://placehold.co/800x500/ffffff/black?text=Right+View%0AWhite%0ARim+5",
+        "front-blue-1":
+          "https://placehold.co/800x500/005a9e/white?text=Front+View%0ABlue%0ARim+1",
+        "front-blue-2":
+          "https://placehold.co/800x500/005a9e/white?text=Front+View%0ABlue%0ARim+2",
+        "front-blue-3":
+          "https://placehold.co/800x500/005a9e/white?text=Front+View%0ABlue%0ARim+3",
+        "front-blue-4":
+          "https://placehold.co/800x500/005a9e/white?text=Front+View%0ABlue%0ARim+4",
+        "front-blue-5":
+          "https://placehold.co/800x500/005a9e/white?text=Front+View%0ABlue%0ARim+5",
+        "front-red-1":
+          "https://placehold.co/800x500/c00/white?text=Front+View%0ARed%0ARim+1",
+        "front-red-2":
+          "https://placehold.co/800x500/c00/white?text=Front+View%0ARed%0ARim+2",
+        "front-red-3":
+          "https://placehold.co/800x500/c00/white?text=Front+View%0ARed%0ARim+3",
+        "front-red-4":
+          "https://placehold.co/800x500/c00/white?text=Front+View%0ARed%0ARim+4",
+        "front-red-5":
+          "https://placehold.co/800x500/c00/white?text=Front+View%0ARed%0ARim+5",
+        "front-black-1":
+          "https://placehold.co/800x500/222/white?text=Front+View%0ABlack%0ARim+1",
+        "front-black-2":
+          "https://placehold.co/800x500/222/white?text=Front+View%0ABlack%0ARim+2",
+        "front-black-3":
+          "https://placehold.co/800x500/222/white?text=Front+View%0ABlack%0ARim+3",
+        "front-black-4":
+          "https://placehold.co/800x500/222/white?text=Front+View%0ABlack%0ARim+4",
+        "front-black-5":
+          "https://placehold.co/800x500/222/white?text=Front+View%0ABlack%0ARim+5",
+        "front-silver-1":
+          "https://placehold.co/800x500/c0c0c0/black?text=Front+View%0ASilver%0ARim+1",
+        "front-silver-2":
+          "https://placehold.co/800x500/c0c0c0/black?text=Front+View%0ASilver%0ARim+2",
+        "front-silver-3":
+          "https://placehold.co/800x500/c0c0c0/black?text=Front+View%0ASilver%0ARim+3",
+        "front-silver-4":
+          "https://placehold.co/800x500/c0c0c0/black?text=Front+View%0ASilver%0ARim+4",
+        "front-silver-5":
+          "https://placehold.co/800x500/c0c0c0/black?text=Front+View%0ASilver%0ARim+5",
+        "front-white-1":
+          "https://placehold.co/800x500/ffffff/black?text=Front+View%0AWhite%0ARim+1",
+        "front-white-2":
+          "https://placehold.co/800x500/ffffff/black?text=Front+View%0AWhite%0ARim+2",
+        "front-white-3":
+          "https://placehold.co/800x500/ffffff/black?text=Front+View%0AWhite%0ARim+3",
+        "front-white-4":
+          "https://placehold.co/800x500/ffffff/black?text=Front+View%0AWhite%0ARim+4",
+        "front-white-5":
+          "https://placehold.co/800x500/ffffff/black?text=Front+View%0AWhite%0ARim+5",
+        "back-blue-1":
+          "https://placehold.co/800x500/005a9e/white?text=Back+View%0ABlue",
+        "back-blue-2":
+          "https://placehold.co/800x500/005a9e/white?text=Back+View%0ABlue",
+        "back-blue-3":
+          "https://placehold.co/800x500/005a9e/white?text=Back+View%0ABlue",
+        "back-blue-4":
+          "https://placehold.co/800x500/005a9e/white?text=Back+View%0ABlue",
+        "back-blue-5":
+          "https://placehold.co/800x500/005a9e/white?text=Back+View%0ABlue",
+        "back-red-1":
+          "https://placehold.co/800x500/c00/white?text=Back+View%0ARed",
+        "back-red-2":
+          "https://placehold.co/800x500/c00/white?text=Back+View%0ARed",
+        "back-red-3":
+          "https://placehold.co/800x500/c00/white?text=Back+View%0ARed",
+        "back-red-4":
+          "https://placehold.co/800x500/c00/white?text=Back+View%0ARed",
+        "back-red-5":
+          "https://placehold.co/800x500/c00/white?text=Back+View%0ARed",
+        "back-black-1":
+          "https://placehold.co/800x500/222/white?text=Back+View%0ABlack",
+        "back-black-2":
+          "https://placehold.co/800x500/222/white?text=Back+View%0ABlack",
+        "back-black-3":
+          "https://placehold.co/800x500/222/white?text=Back+View%0ABlack",
+        "back-black-4":
+          "https://placehold.co/800x500/222/white?text=Back+View%0ABlack",
+        "back-black-5":
+          "https://placehold.co/800x500/222/white?text=Back+View%0ABlack",
+        "back-silver-1":
+          "https://placehold.co/800x500/c0c0c0/black?text=Back+View%0ASilver",
+        "back-silver-2":
+          "https://placehold.co/800x500/c0c0c0/black?text=Back+View%0ASilver",
+        "back-silver-3":
+          "https://placehold.co/800x500/c0c0c0/black?text=Back+View%0ASilver",
+        "back-silver-4":
+          "https://placehold.co/800x500/c0c0c0/black?text=Back+View%0ASilver",
+        "back-silver-5":
+          "https://placehold.co/800x500/c0c0c0/black?text=Back+View%0ASilver",
+        "back-white-1":
+          "https://placehold.co/800x500/ffffff/black?text=Back+View%0AWhite",
+        "back-white-2":
+          "https://placehold.co/800x500/ffffff/black?text=Back+View%0AWhite",
+        "back-white-3":
+          "https://placehold.co/800x500/ffffff/black?text=Back+View%0AWhite",
+        "back-white-4":
+          "https://placehold.co/800x500/ffffff/black?text=Back+View%0AWhite",
+        "back-white-5":
+          "https://placehold.co/800x500/ffffff/black?text=Back+View%0AWhite",
+      };
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mainCarImage = document.getElementById("main-car-image");
+        const allTabs = document.querySelectorAll(".category-tab");
+        const allOptions = document.querySelectorAll(".option-square");
+        const allViewButtons = document.querySelectorAll(".view-btn");
+
+        function updateCar() {
+          const activeView =
+            document.querySelector(".view-btn.active").dataset.view;
+          const activeColor = document.querySelector(
+            '.option-square[data-type="color"].active'
+          ).dataset.value;
+          const activeRim = document.querySelector(
+            '.option-square[data-type="rims"].active'
+          ).dataset.value;
+
+          const imageKey = `${activeView}-${activeColor}-${activeRim}`;
+
+          const newImageUrl = IMAGE_URLS[imageKey];
+
+          if (newImageUrl) {
+            mainCarImage.src = newImageUrl;
+            mainCarImage.alt = `Car showing: ${activeView} view, ${activeColor} color, rim ${activeRim}`;
+          } else {
+            console.warn("Image URL not found for key:", imageKey);
+          }
+        }
+
+        allTabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            allTabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+            const targetId = tab.dataset.target;
+            document.querySelectorAll(".options-container").forEach((c) => {
+              c.classList.toggle("active", c.id === targetId);
+            });
+          });
+        });
+
+        allOptions.forEach((option) => {
+          option.addEventListener("click", () => {
+            const type = option.dataset.type;
+            document
+              .querySelectorAll(`.option-square[data-type="${type}"]`)
+              .forEach((o) => o.classList.remove("active"));
+            option.classList.add("active");
+            updateCar();
+          });
+        });
+
+        allViewButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            allViewButtons.forEach((b) => b.classList.remove("active"));
+            button.classList.add("active");
+            updateCar();
+          });
+        });
+
+        updateCar();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Registeration Form</title>
+		<link rel="stylesheet" href="{%static 'loginpage.css' %} " />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+	
+		</head>
+		<style>
+			body{
+				background: url("{%static 'C:\Users\rehan\OneDrive\Documents\Advanced Motogenius website (Diploma Project)\Actualimplementation\static_files\images\recobbrandimage.jpg'%}") no-repeat center center/cover;
+			}
+		</style>
+		
+		<body>
+		<div class="wrapper">
+			<div class="title"><span>Signup Form</span></div>
+			<form action="/registrationacknowledgement">
+				<div class="row">
+					<i class="fas fa-user"></i>
+					<input type="text" name= "userfullname" placeholder="Full Name" required />
+				</div>
+				<div class="row">
+					<i class="fas fa-user"></i>
+					<input type="tel" name = "userage" placeholder="Age" required />
+				</div>
+				<div class="row">
+					<i class="fas fa-envelope"></i>
+					<input type="email" name = "useremail" placeholder="Email" required />
+				</div>
+				<div class="row">
+					<i class="fas fa-phone"></i>
+					<input type="tel" name = "userphonenumber" placeholder="Phone Number" required />
+				</div>
+				<div class="row">
+					<i class="fas fa-user"></i>
+					<input
+						type="text"
+						name = "username"
+						placeholder="Create username"
+						required />
+				</div>
+				<div class="row">
+					<i class="fas fa-lock"></i>
+					<input
+						type="password"
+						name="userpassword"
+						placeholder="Create Password"
+						required />
+				</div>
+				<div class="row button">
+					<input type="submit" value="Sign Up" />
+				</div>
+				<div class="signup-link">
+					Already a member? <a href="index.html">Login here</a>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script>
+		gsap.from(".wrapper",{
+			y : -200,
+			boxShadow : "0px 10px 20px 20px black",
+			duration : 0.5
+		})
+	</script>
+</html>

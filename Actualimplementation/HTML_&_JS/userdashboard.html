@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{% static 'userdashboard.css' %}" />
+  </head>
+  <style>
+    body {
+      background-image: url("{%static 'C:/Users/rehan/OneDrive/Documents/Advanced Motogenius website (Diploma Project)/Actualimplementation/static_files/images/userdashboardimg.png'%}");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  </style>
+  <body>
+    <header>
+      <h1>Welcome Back {{username}}</h1>
+      <a class="logout" href="/logout">Logout</a>
+    </header>
+    <div class="buttons">
+      <a href="#info-section"><button>Your Info</button></a
+      ><a href="/customization/?urlcarname=sf90"
+        ><button>Customize the Car</button></a
+      >
+      <a href="/recot"><button>AI</button></a>
+      <a href="#feedback-section"><button>Feedback</button></a>
+      <a href="/spfinder"><button>Find the Spare Parts</button></a>
+      <a href="#contact-section"><button>Contact Us</button></a>
+      <a href="#userorders"><button>Track your orders</button></a>
+    </div>
+    <div class="info-box" id="info-section">
+      <h2 align="center">Your Info</h2>
+      <p><strong>Name:</strong> {{userfullname}}</p>
+      <p><strong>Email:</strong> {{useremail}}</p>
+      <p><strong>Phone:</strong> {{userphonenumber}}</p>
+      <br />
+      <h2 align="center">Vehicles You own</h2>
+      <p><strong>Vehicle Names :</strong> {{vehiclenames}}</p>
+    </div>
+    <div class="feedbackcontact">
+      <div class="feedback-box" id="feedback-section">
+        <h3>Feedback</h3>
+        <form method="post" action="/feedbacksubmission">
+          {% csrf_token %}
+          <label for="email"><strong>Your Email:</strong></label
+          ><br />
+          <br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="{{useremail}}"
+            placeholder="Enter your email"
+            required
+          /><br /><br />
+          <label for="message"><strong>Your Feedback:</strong></label
+          ><br />
+          <br />
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your feedback here..."
+            required
+          ></textarea
+          ><br /><br />
+          <div class="submitbuttoncontainer">
+            <button type="submit" id="submitbutton">Submit</button>
+          </div>
+        </form>
+        {% if messages %} {% for message in messages %}
+        <p style="color: green">{{ message }}</p>
+        {% endfor %} {% endif %}
+      </div>
+
+      <div class="info-box" id="contact-section">
+        <h3>Contact Us</h3>
+        Email :
+        <a href="mailto:rehanlogde@gmail.com">rehanlogde863@gmail.com</a> <br />
+        <br />
+        Phone number :
+        <a href="tel:+919529766334">+919529766334</a>
+        <br />
+        <br />
+        Instagram :
+        <a href="https://www.instagram.com/rehan_logde_390">instagram</a>
+      </div>
+    </div>
+    <div class="tablecontainer">
+      {%if superuser %}
+      <div class="userorders" id="userorders">
+        <table class="table">
+          <h2 align="center">Order details</h2>
+          <thead>
+            <tr>
+              <th scope="col">Orderid</th>
+              <th scope="col">username</th>
+              <th scope="col">Part name</th>
+              <th scope="col">Part price</th>
+              <th scope="col">Quantity</th>
+            </tr>
+            {%for orders in alluserorderdetails %}
+            <tr>
+              <th>{{orders.orderid}}</th>
+              <th>{{orders.username}}</th>
+              <th>{{orders.partname}}</th>
+              <th>{{orders.partprice}}</th>
+              <th>{{orders.quantity}}</th>
+            </tr>
+            {% endfor%}
+          </thead>
+        </table>
+      </div>
+      {%else %}
+      <div class="userorders" id="userorders">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Orderid</th>
+              <th scope="col">Part name</th>
+              <th scope="col">Part price</th>
+              <th scope="col">Quantity</th>
+            </tr>
+            {%for orders in orderdetails %}
+            <tr>
+              <th>{{orders.orderid}}</th>
+              <th>{{orders.partname}}</th>
+              <th>{{orders.partprice}}</th>
+              <th>{{orders.quantity}}</th>
+            </tr>
+            {% endfor%}
+          </thead>
+        </table>
+      </div>
+      {%endif%}
+    </div>
+  </body>
+</html>
