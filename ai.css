@@ -1,0 +1,104 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+header {
+  margin-top: 20%;
+}
+.someinfo {
+  border-radius: 20px;
+}
+#h1 {
+  font-size: 60px;
+  background: linear-gradient(45deg, white, grey, aqua, blue);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#h2 {
+  font-size: 40px;
+  background: linear-gradient(45deg, white, grey, aqua, blue);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#splinemodel {
+  height: 400px;
+  margin-top: -35%;
+  margin-left: 45%;
+}
+.scrolldownbuttonsection {
+  margin-top: 5%;
+}
+#scrolldownbutton {
+  width: 25%;
+  padding: 10px;
+  padding-bottom: 0px;
+  font-size: 25px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  margin-left: 37%;
+}
+#scrolldownimg {
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+}
+
+.chatsection {
+  margin-top: 10%;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 20px;
+  font-size: 20px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgb(29, 29, 29), blue);
+  box-shadow: 0px -10px 10px 5px rgb(29, 29, 29);
+  border: transparent;
+}
+.chatsection h2 {
+  color: white;
+}
+input {
+  width: 80%;
+  height: 50px;
+  font-size: 20px;
+  margin-left: 10%;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: white;
+  color: black;
+}
+#sendbutton {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  height: 60px;
+  width: 100px;
+}
+.chatbotreply {
+  margin-top: 10%;
+  margin-left: 50px;
+  width: 30%;
+}
+.messagesection {
+  margin-top: 20%;
+}
+#botbuttons {
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid white;
+  margin-top: 10px;
+  background-color: white;
+  width: 200px;
+  font-size: 17px;
+}
+#actualmsg {
+  font-size: 20px;
+}
